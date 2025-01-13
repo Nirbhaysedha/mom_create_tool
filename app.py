@@ -151,7 +151,7 @@ app = FastAPI()
 # Paths
 UPLOAD_DIR = "./uploads"
 OUTPUT_DIR = "./outputs"
-LOGO_PATH = "/Users/nirbhaysedha/Desktop/S2T/KP.jpeg"
+LOGO_PATH = "./KP.jpeg"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
