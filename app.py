@@ -133,8 +133,6 @@
 
 
 
-
-
 from fastapi import FastAPI, UploadFile, Form
 from fastapi.responses import HTMLResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
@@ -142,6 +140,7 @@ from io import BytesIO
 from zipfile import ZipFile
 import os
 import shutil
+import uvicorn
 from s2tdepl import main
 from mom import MOM
 from utils import delr
@@ -289,3 +288,11 @@ async def download_all_files():
 
     except Exception as e:
         return {"error": f"An error occurred during file download: {str(e)}"}
+
+# Specify the port explicitly for Render deployment (use the environment variable `PORT` in Render)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
+
+
+
