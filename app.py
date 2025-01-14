@@ -8,7 +8,7 @@ from utils import delr
 
 
 
-logo_path = "/Users/nirbhaysedha/Desktop/S2T/KP.jpeg"  # Replace with the actual path to the variable 'image'
+logo_path = "./KP.jpeg"  # Replace with the actual path to the variable 'image'
 kpmg_logo = Image.open(logo_path)
 
 # App Configuration
@@ -97,11 +97,11 @@ with st.container():
         with st.spinner("Performing operations, please wait..."):
         
             main(save_path)
-            MOM('/Users/nirbhaysedha/Desktop/S2T/transcription.txt')
+            MOM('./transcription.txt')
 
             # Output files
-            output_file_1 = "/Users/nirbhaysedha/Desktop/S2T/transcription.txt"
-            output_file_2 = "/Users/nirbhaysedha/Desktop/S2T/MoM.txt"
+            output_file_1 ="./transcription.txt"
+            output_file_2 = "./MoM.txt"
         # Download Buttons
         col1, col2 = st.columns([1, 1])  # Balanced columns for responsive design
         with col1:
